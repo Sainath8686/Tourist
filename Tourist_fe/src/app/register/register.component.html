@@ -1,0 +1,117 @@
+<script>
+function validate(age){
+  console.log(age);
+}
+</script>
+<div class="bg">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="h3 fw-bold text-dark my-4">Register Tourist</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+
+        <form (ngSubmit)="saveTourist()" #myForm="ngForm" style="align-items: center;">
+          <div class="mb-2">
+            <label for="">First Name</label>
+            <input name="fname" id="fname" #fname="ngModel" [(ngModel)]="tourist.fname" required="true" type="text"
+              class="form-control" pattern="[a-zA-Z]+" maxlength="15" placeholder="First name">
+            <span *ngIf="fname.invalid && (fname.dirty || fname.touched)">
+
+              <small class="text-danger" *ngIf="fname.errors?. ['required']">This is a required Field</small>
+
+              <small class="text-danger" *ngIf="fname.errors?. ['pattern']">Enter only alphabets
+              </small>
+
+            </span>
+
+          </div>
+          <div class="mb-2">
+            <label for="">Last Name</label>
+            <input name="lname" id="lname" #lname="ngModel" [(ngModel)]="tourist.lname" required="true" type="text"
+              class="form-control" pattern="[a-zA-Z]+" maxlength="12" placeholder="Last name">
+            <span *ngIf="lname.invalid && (lname.dirty || lname.touched)">
+
+              <small class="text-danger" *ngIf="lname.errors?. ['required']">This is a required Field</small>
+
+              <small class="text-danger" *ngIf="lname.errors?. ['pattern']">Enter only alphabets
+              </small>
+
+            </span>
+
+          </div>
+          <div class="mb-2">
+            <label for="">Gender</label><br />
+            <input type="radio" required name='gender' value='Male'
+              [(ngModel)]='tourist.gender' /><label>Male</label><br />
+            <input type="radio" required name='gender' value='Female'
+              [(ngModel)]='tourist.gender'><label>Female</label><br />
+
+
+          </div>
+          <div class="mb-2">
+            <label for="">Age</label>
+           
+            <input name="age" id="age" #age="ngModel" required="true" [(ngModel)]="tourist.age" type="number"
+             class="form-control" maxlength="2" placeholder="Enter age" max="90" >
+            <span *ngIf="age.invalid && (age.dirty || age.touched)">
+             
+              <small class="text-danger" *ngIf="age.errors?. ['required']">This is a required Field</small>
+
+              <small class="text-danger" *ngIf="age.errors?.['max']">Enter only age
+              </small>
+
+            </span>
+          </div>
+
+
+          <div class="mb-2">
+            <label for="">From Place</label>
+            <input name="Fromplace" id="fromplace" #fromplace="ngModel" [(ngModel)]="tourist.fromplace" name="fromplace"
+              required="true" type="text" pattern="[a-zA-Z]+" class="form-control" placeholder="Enter Place">
+            <span *ngIf="fromplace.invalid && (fromplace.dirty || fromplace.touched)">
+
+              <small class="text-danger" *ngIf="fromplace.errors?. ['required']">This is a required Field</small>
+
+              <small class="text-danger" *ngIf="fromplace.errors?. ['pattern']">Enter only alphabets
+              </small>
+
+            </span>
+          </div>
+
+
+          <div class="mb-2">
+            <label for="">Number Of Days Visits</label>
+            <input name="NumberOfDaysVisits" id="numberofdaysvisits" #numberofdaysvisits="ngModel"
+              [(ngModel)]="tourist.numberofdaysvisits" name="numberofdaysvisits" required="true" type="number"
+              class="form-control" placeholder="Enter days">
+            <span *ngIf="fromplace.invalid && (fromplace.dirty || fromplace.touched)">
+
+              <small class="text-danger" *ngIf="numberofdaysvisits.errors?. ['required']">This is a required
+                Field</small>
+
+              <small class="text-danger" *ngIf="numberofdaysvisits.errors?. ['pattern']">Enter only numbers
+              </small>
+
+            </span>
+          </div>
+
+
+          <div class="mb-2">
+            <button type="submit" [disabled]="!myForm.form.valid" class="btn btn-danger">Create</button>
+            <a routerLink="/home" class="btn btn-dark ms-2">Close</a>
+          </div>
+
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <img [src]="" alt="" class="contact-image">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <pre>{{patient|json}}</pre> -->

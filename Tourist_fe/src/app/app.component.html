@@ -1,0 +1,26 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="navbar navbar-expand-md navbar-dark bg-dark mb-4" role="navigation" >
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="home" focused>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="add" focused>Add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="view">View</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

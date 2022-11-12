@@ -1,0 +1,36 @@
+<div class="bg"><div class="container">
+ <div class="p-5 text-center">
+ <div class="mask" style="background-color:#5bccd0;">
+ <div class="d-flex justify-content-center align-items-center">
+     <table class="table">
+         <thead>
+           <tr>
+             <th scope="col"> Name</th>
+             <th scope="col">Age</th>
+             <th scope="col">Gender</th>
+             <th scope="col">From place</th>
+             <th scope="col">NumberOfDaysVisits</th>
+            
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let patient of tourist">
+             <td>{{patient.fname}} {{patient.lname}}</td>
+             <td>{{patient.age}}</td>
+             <td>{{patient.gender}}</td>
+             <td>{{patient.fromplace}}</td>
+             <td>{{patient.numberofdaysvisits}}</td>
+           </tr>
+         </tbody>
+       </table>
+ </div>
+ </div>
+ <br>
+ </div>
+ 
+ </div>
+</div>
+
+ 
+ <!-- Jumbotron -->
+
